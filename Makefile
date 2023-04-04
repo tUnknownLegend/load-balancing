@@ -7,6 +7,9 @@ serv-2:
 serv-3: 
 	ssh -i Ubuntu-Main-server-3-hIWUW6KN.pem ubuntu@5.188.140.11
 
+load-balancer:
+	ssh -i Ubuntu-Load-balancer-7iFujsDZ.pem ubuntu@89.208.199.246
+
 remove-docker:
 	sudo apt-get remove docker docker-engine docker.io containerd runc
 
