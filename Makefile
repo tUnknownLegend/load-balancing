@@ -19,4 +19,9 @@ install-docker:remove-docker
 install-go:
 	sudo apt install snap && sudo snap install go --classic
 
-# sudo snap refresh go --channel=1.20/stable --classic
+docker-fix:
+	- sudo killall containerd-shim
+
+go-version:
+	sudo snap refresh go --channel=1.20/stable --classic
+	
