@@ -8,3 +8,9 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
       - "80:80"
+
+  nginx-prometheus-exoprter:
+    container_name: nginx-prometheus-exoprter
+    image: nginx/nginx-prometheus-exporter
+    ports:
+      - "9113:9113"
