@@ -11,7 +11,7 @@ scrape_configs:
   - job_name: 'nginx'
     metrics_path: /metrics
     static_configs:
-      - targets: [ 'nginx/nginx-prometheus-exporter:9113' ]       
+      - targets: [ '89.208.199.246:9113' ]       
 
   - job_name: 'server-node-1'
     metrics_path: /metrics
