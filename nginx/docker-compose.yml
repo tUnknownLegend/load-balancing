@@ -12,7 +12,7 @@ services:
     networks:
       - nginx-net
 
-  nginx-prometheus-exoprter:
+  nginx-prometheus-exporter:
     container_name: nginx-prometheus-exporter
     image: nginx/nginx-prometheus-exporter
     command:
