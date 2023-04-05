@@ -19,12 +19,12 @@ install-docker:remove-docker
 install-go:
 	sudo apt install snap && sudo snap install go --classic
 
-docker-fix:
+docker-fix: 
 	- sudo killall containerd-shim
 
 go-version:
 	sudo snap refresh go --channel=1.20/stable --classic
 
 run-vegeta-status:
-	echo "GET http://89.208.199.246/api/service/status" | vegeta attack -duration=10s -rate=0 -max-workers=1024 | tee results.bin | vegeta report
+	echo "GET http://89.208.199.246/api/service/status" | vegeta attack -duration=10s -rate=1000 -max-workers=1024 | tee results.bin | vegeta report
 	
