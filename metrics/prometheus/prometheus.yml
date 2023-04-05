@@ -41,4 +41,4 @@ scrape_configs:
   - job_name: 'api-server-3'
     metrics_path: /metrics
     static_configs:
-      - targets: [ '5.188.140.11:9090' ]      
+      - targets: [ '5.188.140.11:9090' ]
