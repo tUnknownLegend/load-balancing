@@ -24,4 +24,7 @@ docker-fix:
 
 go-version:
 	sudo snap refresh go --channel=1.20/stable --classic
+
+run-vegeta-status:
+	echo "GET http://89.208.199.246/api/service/status" | vegeta attack -duration=10s -rate=0 -max-workers=1024 | tee results.bin | vegeta report
 	
