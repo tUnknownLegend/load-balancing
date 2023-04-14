@@ -22,9 +22,15 @@ install-go:
 docker-fix: 
 	- sudo killall containerd-shim
 
+docker-clean:
+	sudo docker system prune -a && sudo docker volume prune
+
 go-version:
 	sudo snap refresh go --channel=1.20/stable --classic
 
 run-vegeta-status:
-	echo "GET http://89.208.199.246/api/service/status" | vegeta attack -duration=10s -rate=1000 -max-workers=1024 | tee results.bin | vegeta report
+	echo "GET http://89.208.199.246/api/service/status" | vegeta attack -duration=60s -rate=200 -max-workers=1024 | tee results.bin | vegeta report
+	
+run-vegeta-main:
+	echo "GET http://95.163.214.47:5000/api/service/status" | vegeta attack -duration=60s -rate=0 -max-workers=1024 | tee results.bin | vegeta report
 	
